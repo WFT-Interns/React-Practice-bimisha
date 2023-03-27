@@ -1,0 +1,67 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "email": "johndoe@example.com",
+            "age": 28,
+            "address": "123 Main St"
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "email": "janesmith@example.com",
+            "age": 35,
+            "address": "456 Park Ave"
+        },
+        {
+            "id": 3,
+            "name": "Bob Johnson",
+            "email": "bobjohnson@example.com",
+            "age": 42,
+            "address": "789 Elm St"
+        },
+        {
+            "id": 4,
+            "name": "Samantha Lee",
+            "email": "samlee@example.com",
+            "age": 25,
+            "address": "555 Oak Rd"
+        },
+        {
+            "id": 5,
+            "name": "Chris Brown",
+            "email": "chrisbrown@example.com",
+            "age": 31,
+            "address": "777 Broadway"
+        },
+        {
+            "id": 6,
+            "name": "Amanda Green",
+            "email": "amandagreen@example.com",
+            "age": 29,
+            "address": "999 Maple St"
+        },
+        {
+            "id": 7,
+            "name": "David Wilson",
+            "email": "davidwilson@example.com",
+            "age": 37,
+            "address": "321 Oak Ave"
+        },
+        {
+            "id": 8,
+            "name": "Maria Perez",
+            "email": "mariaperez@example.com",
+            "age": 26,
+            "address": "222 1st St"
+        },
+        {
+            "id": 9,
+            "name": "Mike Davis",
+            "email": "mikedavis@example.com",
+            "age": 33,
+            "address": "444 Broad St"
+        }
+    ]
+}

@@ -1,6 +1,10 @@
 import React, {useState} from "react"
+import { useNavigate } from "react-router-dom";
 import "./login.css";
-export const Login =() => {
+
+const Login =() => {
+    const navigate=useNavigate();
+    
     const [userName, setuserName] = useState('');
     const [password, setPass] = useState('');
 
@@ -28,7 +32,7 @@ export const Login =() => {
                 <label>Password:</label>
                 <input type="Password" value={password} onChange={event => setPass(event.target.value)} name="password"/>
                 <div class="form-button">
-                    <button type="submit">Log In</button>
+                    <button type="submit"onClick={() => navigate("/Home")}>Log In</button>
                     <button type="clear" onClick={resetForm}>Clear</button>
                 </div>
             </form>

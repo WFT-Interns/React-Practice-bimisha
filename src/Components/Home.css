@@ -1,0 +1,35 @@
+.nav-container{
+    background-color: black;
+    color: white;
+    margin: auto;
+    margin-top: 40px;
+    width: 30%;
+    padding: 10px;
+    border-radius: 10px;
+}
+button{
+    width: 30%;
+    flex-direction: row;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+}
+table{
+    width: 80%;
+    margin-left: 150px;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+table th{
+background-color: grey;
+}
+table td, table th{
+    border: 2px solid #ddd;
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: black;
+    text-align: center;
+}
