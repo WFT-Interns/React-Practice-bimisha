@@ -20,7 +20,7 @@ const Home =() => {
           </tr>
             {
             Data.users.map((list)=>(
-                <tr>~
+                <tr>
                   <td>{list.name}</td>
                   <td>{list.age}</td>
                   <td>{list.email}</td>
