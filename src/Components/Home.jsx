@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 //import "./css/Home.css";
 
 const Home = () => {
-  const [userdata, setuserdata] = useState([]);
+  const [userdata, setUserData] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
     const Datas = require("../Data/users.json");
@@ -16,7 +16,7 @@ const Home = () => {
       address: users.address,
       email: users.email,
     }));
-    setuserdata(parsedata);
+    setUserData(parsedata);
   }, []);
 
   const columns = [
