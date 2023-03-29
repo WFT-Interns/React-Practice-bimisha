@@ -27,8 +27,8 @@ const Login =() => {
         <>
         <ThemeProvider theme = {theme}>
             <Container component="form" sx={{ width: 300, height:300, mt: 20, p:5, border: '1px dashed grey'}} onSubmit={handleSubmit} className="form-container">
-                <TextField label="Username" variant="outlined" type="text" value={userName} onChange={event => setUsername(event.target.value)} name="userName" required/>
-                <TextField label="Password" variant="outlined"  type="Password" value={password} onChange={event => setPass(event.target.value)} name="password" required/>
+                <TextField margin="1" label="Username" variant="outlined" type="text" value={userName} onChange={event => setUsername(event.target.value)} name="userName" required/>
+                <TextField margin="1" label="Password" variant="outlined"  type="Password" value={password} onChange={event => setPass(event.target.value)} name="password" required/>
                 <Stack class="form-button" direction="row" justifyContent="space between" alignItems="center" >
                     <Button variant= "outlined"  type="submit"onClick={() => navigate("/Home")}>Log In</Button>
                     <Button variant= "outlined"  type="clear" onClick={resetForm}>Clear</Button>
