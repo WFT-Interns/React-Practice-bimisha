@@ -1,0 +1,41 @@
+
+.nav-container{
+    background-color: black;
+    color: white;
+    margin: auto;
+    margin-top: 40px;
+    width: 30%;
+    padding: 10px;
+    border-radius: 10px;
+}
+button{
+    width: 30%;
+    flex-direction: row;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+}
+.search{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input{
+    width: 60%;
+    margin: 5px auto;
+}
+h1{
+    font-size: 6rem;
+    margin: 10px;
+}
+.weather-description{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 60%;
+    margin-top: 10%;
+    margin-left: 20%; 
+    background-color: rgba(233, 110, 110, 0.2);
+}

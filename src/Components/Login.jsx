@@ -1,10 +1,13 @@
-import React, {useState} from "react"
+import React, {useState} from "react";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import { TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import "./login.css";
+// import "./css/login.css";
 
 const Login =() => {
     const navigate=useNavigate();
-    
+
     const [userName, setuserName] = useState('');
     const [password, setPass] = useState('');
 
@@ -25,22 +28,18 @@ const Login =() => {
 
     return(
         <>
-        <div className="form-container">
-            <form action="" onSubmit={handleSubmit}>
-                <label>Username:</label>
-                <input type="text" value={userName} onChange={event => setuserName(event.target.value)} name="userName"/>
-                <label>Password:</label>
-                <input type="Password" value={password} onChange={event => setPass(event.target.value)} name="password"/>
-                <div class="form-button">
-                    <button type="submit"onClick={() => navigate("/Home")}>Log In</button>
-                    <button type="clear" onClick={resetForm}>Clear</button>
-                </div>
-            </form>
-        </div>
-        <div className="display-container">
+            <Box component="form" sx={{"& > :not(style)": {m:1, width:"20ch"}}}onSubmit={handleSubmit} className="form-container">
+                <TextField label="Username" variant="outlined" type="text" value={userName} onChange={event => setuserName(event.target.value)} name="userName" required/>
+                <TextField label="Password" variant="outlined"  type="Password" value={password} onChange={event => setPass(event.target.value)} name="password" required/>
+                <Box class="form-button">
+                    <Button variant= "outlined" size="small" type="submit"onClick={() => navigate("/Home")}>Log In</Button>
+                    <Button variant= "outlined" size="small" type="clear" onClick={resetForm}>Clear</Button>
+                </Box>
+            </Box>
+        {/* <div className="display-container">
             <h2>User Details:</h2>
             <p>{message}</p>
-        </div>
+        </div> */}
         </>
     )
 }

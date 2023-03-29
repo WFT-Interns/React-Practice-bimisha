@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
-import "./Home.css";
+import "./css/Home.css";
 
 const Home =() => {
   const navigate=useNavigate();
@@ -10,7 +10,7 @@ const Home =() => {
     <>
         <div className='nav-container'>
             <button type="submit" onClick={() => navigate("/")}>Back</button>
-            <button type="submit" onClick={() => navigate("/")}>Next</button>
+            <button type="submit" onClick={() => navigate("/Weather")}>Today's Weather</button>
         </div>
         <table>
           <tr>
@@ -20,7 +20,7 @@ const Home =() => {
           </tr>
             {
             Data.users.map((list)=>(
-                <tr>~
+                <tr>
                   <td>{list.name}</td>
                   <td>{list.age}</td>
                   <td>{list.email}</td>
