@@ -28,7 +28,6 @@ const Weather =() => {
 
   return (
     <>
-    {console.log(data)}
        <div className='nav-container'>
             <button type="submit" onClick={() => navigate("/")}>Back</button>
             <div className="search">
