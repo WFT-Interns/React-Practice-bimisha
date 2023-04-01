@@ -32,9 +32,10 @@ const Home = () => {
   return (
     <>
     <ThemeProvider theme={theme}>
-    <Container component="form" display="flex" className="nav-container" sx={{ width: 400, height: 100, p: 5, border: "1px dashed grey",bgcolor:"white" }} >
+    <Container component="form" display="flex" className="nav-container" sx={{ width: 600, height: 100, p: 5, border: "1px dashed grey",bgcolor:"white" }} >
     <Button type="submit" variant="outlined" sx={{width:100, height:50}} onClick={() => navigate("/")}>Back</Button>
     <Button type="submit" variant="outlined"  sx={{width:200, height:50}} onClick={() => navigate("/Weather")}>Today's Weather</Button>
+    <Button type="submit" variant="outlined"  sx={{width:100, height:50}} onClick={() => navigate("/FoodRecipe")}>Today's Recipe</Button>
     </Container>
     <Box height="50em">
       <DataGrid

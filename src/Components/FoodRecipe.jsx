@@ -1,36 +1,49 @@
 import { useQuery } from 'react-query';
-// import { useState } from "react";
-import React from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import instance from '../config/axios.config';
+import { Container, Button, TextField} from "@mui/material";
 
 export const FoodRecipe = () => {
   const navigate = useNavigate();
-//   const [food, setFood] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [inputValue, setInputValue] = useState('');
+  const [responseData, setResponseData] = useState(null);
 
-  const { isLoading, data } = useQuery(['foodNames'], () => {
-    return axios.get(`https://api.spoonacular.com/food/products/search?query=milk&apiKey=ff097edd4f6042b082177599d283d9d6`)
-    // if (food) {
-    //   return axios.get(`https://api.spoonacular.com/food/products/search?query=yogurt&apiKey=ff097edd4f6042b082177599d283d9d6`)
-    // }
-  })
-
-  if (isLoading) {
-    return <h2>Loading...</h2>
+  const { isLoading, error, data } = useQuery(['foodNames', searchTerm], async () => {
+    if (searchTerm != '') {
+      const response = await instance.get(`/api/recipes/v2?q=${searchTerm}`);
+      console.log(10, 'api call');
+      setSearchTerm('');
+      setResponseData(response.data.hits);
+    
+    }
+  });
+  const handleButtonClick = () => {
+    console.log(2, inputValue)
+    setSearchTerm(inputValue)
+    setInputValue('');
   }
+ 
 
   return (
     <>
-    {console.log(data)}
-      <div className='nav-container'>
-        <button type="submit" onClick={() => navigate("/")}>Back</button>
-        <div className="search">
-          <input type="text"   placeholder='Enter Food Items' />
+      <Container display="flex" className="nav-container" sx={{ width: 600, height: 100, mt: 5, border: "1px dashed grey",bgcolor:"white" }} >
+        <Button variant= "outlined"  type="submit"onClick={() => navigate("/Home")}>Back</Button>
+        <TextField label="Enter food item" variant="outlined" type="text" value={inputValue} onChange={event =>  setInputValue(event.target.value)} required/>
+        <Button variant= "outlined"  type="submit" onClick={handleButtonClick}>Search</Button>
+        {isLoading &&  <h2>Loading...</h2>}
+        {error && <h2>Error: {error.message}</h2>}
+        {responseData && console.log(4, responseData)}
+        {responseData && responseData.map((item) => (
+        //console.log(3, item)
+        <div  key={item.recipe.label}>
+            <h2>{item.recipe.label}</h2>
+            <h2>{item.recipe.calories}</h2>
         </div>
-        {data.data.products.map(food => {
-          return <div key={food.title}>{food.title}</div>
-        })}
-      </div>
+        ))}
+       
+      </Container>
     </>
   )
 }
